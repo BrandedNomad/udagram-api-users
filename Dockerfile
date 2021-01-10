@@ -21,5 +21,5 @@ RUN mv /usr/src/app/www/* /www/data/. && rm -rf usr/src/app
 
 EXPOSE 8080
 
-CMD ["node", "www/server.js"]
+CMD ["node", "src/server.js"]
 
