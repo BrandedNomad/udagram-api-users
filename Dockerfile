@@ -23,6 +23,7 @@ WORKDIR /www/data
 # Move build and remove unes
 RUN mv /usr/src/app/www/* /www/data/. && rm -rf usr/src/app
 
+RUN npm install
 
 EXPOSE 8080
 
