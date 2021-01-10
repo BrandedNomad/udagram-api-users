@@ -9,7 +9,7 @@
     "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "build": "npm run clean && mkdir www && cp package.json www/package.json && cp -r src www/src && cd www && zip -r Archive.zip . && cd ..",
+    "build": "npm run clean && mkdir www && cp package.json www/package.json && cp -r src www/src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
