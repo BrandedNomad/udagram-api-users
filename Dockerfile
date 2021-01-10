@@ -16,12 +16,10 @@ RUN npm run build
 # set new workdirectory
 WORKDIR /www/data
 
-# Move build and remove unescesarry files
-RUN mv /usr/src/app/www/* /www/data/. && rm -rf user/src/app
+# Move build and remove unes
+RUN mv /usr/src/app/www/* /www/data/. && rm -rf usr/src/app
 
-# Set PORT
 EXPOSE 8080
 
-# Run server
-CMD ["node", "server.js"]
+CMD ["node", "www/server.js"]
 
