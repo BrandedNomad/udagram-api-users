@@ -10,6 +10,8 @@ COPY . .
 # install dependencies
 RUN npm install
 
+RUN npm install -g typescript
+
 # run build
 RUN npm run build
 
