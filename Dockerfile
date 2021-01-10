@@ -1,28 +1,27 @@
 # Use NodeJS base image
 FROM node:13
 
+#Set work directory
 WORKDIR /usr/src/app
 
-COPY nginx.conf /etc/nginx/nginx.conf
-
+#Copy all files
 COPY . .
 
+# install dependencies
 RUN npm install
 
+# run build
 RUN npm run build
 
-RUN apt-get update \
-    && apt-get install -y nginx --option=Dpkg::Options::=--force-confdef \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && echo "daemon off;" >> /etc/nginx/nginx.conf
-
+# set new workdirectory
 WORKDIR /www/data
 
-# Create app directory
-RUN mv /usr/src/app/www/* /www/data/. && rm -rf /usr/src/app
+# Move build and remove unescesarry files
+RUN mv /user/src/app/www/* /www/data/. && rm -rf user/src/app
 
+# Set PORT
 EXPOSE 8080
 
-CMD ["node", "www/server.js"]
+# Run server
+CMD ["node", "server.js"]
 
