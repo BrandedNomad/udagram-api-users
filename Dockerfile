@@ -25,7 +25,7 @@ RUN mv /usr/src/app/www/* /www/data/. && rm -rf usr/src/app
 
 RUN npm install
 
-EXPOSE 8100
+EXPOSE 8080
 
 CMD ["node", "server.js"]
 
